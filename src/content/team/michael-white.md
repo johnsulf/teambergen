@@ -1,8 +1,7 @@
 ---
 name: Michael White
 role: Spiller
-image: ../../assets/team/michael.jpg
-pdga: 301778
+pdga: 196859
 order: 3
 ---
 

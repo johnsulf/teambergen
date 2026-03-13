@@ -1,7 +1,6 @@
 ---
 name: Olav Breistein
 role: Spiller
-image: ../../assets/team/olav.jpg
 pdga: 59468
 order: 2
 ---
