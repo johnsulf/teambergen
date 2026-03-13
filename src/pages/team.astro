@@ -1,11 +1,11 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../layouts/components/Footer.astro';
 import Header from '../layouts/components/Header.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Section from '../components/Section.astro';
+import PlayerAvatar from '../components/PlayerAvatar.astro';
 
 const allMembers = await getCollection('team');
 const teamMembers = allMembers.sort((a, b) => a.data.order - b.data.order);
@@ -53,32 +53,11 @@ const renderedMembers = await Promise.all(
               class={`card bg-base-200 flex-col md:flex-row md:items-stretch scroll-mt-24 overflow-hidden animate-fade-up stagger-${(index % 4) + 1}`}
             >
               <figure class="md:w-2/5 shrink-0 relative">
-                {data.image ? (
-                  <Image
-                    src={data.image}
-                    alt={data.name}
-                    width={500}
-                    height={500}
-                    class="w-full h-full object-cover team-image min-h-64 md:min-h-0 md:absolute md:inset-0"
-                  />
-                ) : (
-                  <div class="bg-base-300 w-full h-64 md:h-full flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-24 w-24 text-base-content/20"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </div>
-                )}
+                <PlayerAvatar
+                  name={data.name}
+                  size="lg"
+                  class="md:absolute md:inset-0 rounded-none h-64 md:h-full shrink-0"
+                />
               </figure>
               <div class="card-body md:w-3/5 p-6 md:p-8">
                 <h2 class="card-title text-2xl mb-2">{data.name}</h2>
