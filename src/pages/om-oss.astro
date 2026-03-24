@@ -4,7 +4,6 @@ import Footer from '../layouts/components/Footer.astro';
 import Header from '../layouts/components/Header.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Section from '../components/Section.astro';
-import FeatureCard from '../components/FeatureCard.astro';
 ---
 
 <Layout
@@ -18,8 +17,97 @@ import FeatureCard from '../components/FeatureCard.astro';
       lead="Vi er en gjeng diskgolf-entusiaster fra Bergen og omegn som vil litt mer med sporten vår."
     />
 
+    <!-- Story section – editorial asymmetric layout -->
     <Section variant="default">
-      <!-- Asymmetric header -->
+      <div
+        class="max-w-5xl flex flex-col lg:flex-row gap-12 lg:gap-20 items-start"
+      >
+        <div class="flex-1">
+          <span
+            class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium mb-6"
+          >
+            Historien vår
+          </span>
+          <h2 class="mb-6">Fra uformelle runder til seriøs satsing</h2>
+          <div class="space-y-4 text-base-content/80 leading-relaxed">
+            <p>
+              Team Bergen? startet med noe så enkelt som en felles kjærlighet
+              for å kaste disker i Bergens vakre natur. Det som begynte som
+              uformelle runder på lokale baner, vokste raskt til noe mer – et
+              fellesskap bygget på lidenskap, rivaleri og gjensidig respekt.
+            </p>
+            <p>
+              Spørsmålstegnet i navnet er ingen feil. Det er en invitasjon – en
+              åpen dør til alle som vil være med. Enten du er nybegynner eller
+              erfaren, handler Team Bergen? om å utfordre seg selv og hverandre.
+            </p>
+            <p>
+              I dag satser vi målrettet: vi trener sammen, konkurrerer på
+              regionalt og nasjonalt nivå, og jobber aktivt for å løfte
+              diskgolfmiljøet på Vestlandet. Vi representerer Bergen med
+              stolthet.
+            </p>
+          </div>
+        </div>
+        <!-- Visual element – overlapping, off-grid -->
+        <div
+          class="shrink-0 w-64 h-64 lg:w-80 lg:h-80 relative hidden lg:block"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute inset-0 rounded-2xl bg-linear-to-br from-accent/20 to-team-navy/20 rotate-6"
+          >
+          </div>
+          <div
+            class="absolute inset-4 rounded-xl bg-team-navy/10 backdrop-blur-sm -rotate-3 flex items-center justify-center"
+          >
+            <span class="text-8xl select-none">🥏</span>
+          </div>
+          <div
+            class="absolute -bottom-4 -left-4 px-5 py-2 rounded-full bg-accent text-accent-content font-semibold text-sm shadow-lg"
+          >
+            Siden 2024
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Stats section – teal accent for data-heavy content -->
+    <Section variant="teal">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div class="text-center">
+            <p class="text-4xl md:text-5xl font-bold text-team-gold mb-2">4</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide">
+              Spillere
+            </p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl md:text-5xl font-bold text-team-gold mb-2">3</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide">
+              Sponsorer
+            </p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl md:text-5xl font-bold text-team-gold mb-2">
+              10+
+            </p>
+            <p class="text-sm text-white/70 font-medium tracking-wide">
+              Turneringer i 2025
+            </p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl md:text-5xl font-bold text-team-gold mb-2">1</p>
+            <p class="text-sm text-white/70 font-medium tracking-wide">
+              Region vi elsker
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Values – editorial layout, no card wrappers -->
+    <Section variant="alt">
       <div class="max-w-5xl mb-14">
         <h2>Hva vi står for</h2>
         <p class="lead max-w-xl mt-4">
@@ -28,44 +116,142 @@ import FeatureCard from '../components/FeatureCard.astro';
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
-        <FeatureCard
-          icon="users"
-          title="Inkluderende miljø"
-          description="Vi vil skape et stort og inkluderende miljø der alle er velkomne – uansett nivå. Samtidig gir vi mulighet for de som vil satse og utvikle seg videre."
-        />
-        <FeatureCard
-          icon="growth"
-          title="Vekst på Vestlandet"
-          description="Vi vil gjøre diskgolf så stort som mulig på Vestlandet. Vi jobber for å spre kjennskap til sporten og bygge et sterkt fellesskap i regionen."
-        />
+      <div class="grid md:grid-cols-3 gap-10 lg:gap-14 max-w-5xl">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg mb-2 tracking-tight">Inkluderende miljø</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Vi vil skape et stort og inkluderende miljø der alle er velkomne –
+            uansett nivå. Samtidig gir vi mulighet for de som vil satse og
+            utvikle seg videre.
+          </p>
+        </div>
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg mb-2 tracking-tight">Vekst på Vestlandet</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Vi vil gjøre diskgolf så stort som mulig på Vestlandet. Vi jobber
+            for å spre kjennskap til sporten og bygge et sterkt fellesskap i
+            regionen.
+          </p>
+        </div>
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg mb-2 tracking-tight">Seriøs satsing</h3>
+          <p class="text-sm text-base-content/70 leading-relaxed">
+            Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå.
+            Målet er å bli bedre – både individuelt og som lag.
+          </p>
+        </div>
       </div>
     </Section>
 
-    <Section variant="alt">
-      <div class="max-w-5xl">
-        <h2 class="mb-4">Bli kjent med gjengen</h2>
-        <p class="lead max-w-xl mb-10">
-          Bak Team Bergen? står fire spillere med ulik bakgrunn og erfaring, men
-          felles lidenskap for diskgolf.
-        </p>
-        <a href="/team" class="btn btn-accent btn-lg gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
+    <!-- Vision section – editorial, primary gradient -->
+    <Section variant="primary">
+      <div
+        class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative z-10"
+      >
+        <div class="flex-1">
+          <h2 class="text-primary-content! mb-6">Veien videre</h2>
+          <p class="text-primary-content/80 text-lg leading-relaxed mb-6">
+            Vi drømmer om å bygge det sterkeste diskgolfteamet på Vestlandet.
+            Med flere turneringer, bedre trening og et voksende nettverk av
+            sponsorer, jobber vi mot å sette Bergen på det nasjonale
+            diskgolfkartet.
+          </p>
+          <p class="text-primary-content/80 text-lg leading-relaxed">
+            Vil du være med på reisen? Enten som spiller, sponsor eller
+            supporter – vi har plass til deg.
+          </p>
+        </div>
+        <div class="shrink-0 flex flex-col gap-4 items-start">
+          <a href="/team" class="btn btn-accent btn-lg gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            Møt teamet
+          </a>
+          <a
+            href="/kontakt#sponsor"
+            class="btn btn-ghost btn-lg text-primary-content/80 hover:text-accent gap-2 group"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-            ></path>
-          </svg>
-          Møt teamet
-        </a>
+            Bli sponsor
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </Section>
   </main>

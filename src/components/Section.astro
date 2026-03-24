@@ -1,7 +1,7 @@
 ---
 interface Props {
   id?: string;
-  variant?: 'default' | 'alt' | 'primary' | 'accent';
+  variant?: 'default' | 'alt' | 'primary' | 'accent' | 'teal';
   narrow?: boolean;
   class?: string;
 }
@@ -18,6 +18,7 @@ const bgClasses = {
   alt: 'bg-base-200',
   primary: 'hero-gradient text-primary-content bg-noise',
   accent: 'bg-accent text-accent-content',
+  teal: 'bg-team-teal text-white bg-noise',
 };
 
 const containerWidth = narrow ? 'max-w-3xl' : 'max-w-6xl';
