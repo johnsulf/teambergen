@@ -33,13 +33,13 @@ interface Props {
 const { title = 'Våre samarbeidspartnere', variant = 'default' } = Astro.props;
 ---
 
-<Section variant={variant} class="border-t border-base-200">
-  <div class="text-center mb-10">
-    <h2 class="section-title">{title}</h2>
+<Section variant={variant}>
+  <div class="mb-10">
+    <h2>{title}</h2>
   </div>
 
   <div
-    class="bg-primary p-4 rounded flex flex-wrap justify-center items-center gap-8 md:gap-16"
+    class="bg-team-navy rounded-xl p-6 flex flex-wrap justify-center items-center gap-8 md:gap-16"
   >
     {
       sponsors.map((sponsor) => (

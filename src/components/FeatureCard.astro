@@ -29,20 +29,17 @@ const icons: Record<string, string> = {
   check: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
 };
 
-const cardClass =
-  variant === 'outline'
-    ? 'border-2 border-base-300 bg-base-100'
-    : 'bg-base-200';
+const cardClass = variant === 'outline' ? 'bg-base-100' : 'bg-base-200';
 ---
 
 <div class={`card card-hover ${cardClass}`}>
   <div class="card-body items-center text-center">
     <div
-      class="icon-wrapper w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-3"
+      class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-3"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7 text-primary"
+        class="h-7 w-7 text-accent"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -54,8 +51,8 @@ const cardClass =
           d={icons[icon] || icons['check']}></path>
       </svg>
     </div>
-    <h3 class="card-title text-lg">{title}</h3>
-    {description && <p class="text-sm opacity-80">{description}</p>}
+    <h3 class="card-title text-lg tracking-tight">{title}</h3>
+    {description && <p class="text-sm text-base-content/70">{description}</p>}
     <slot />
   </div>
 </div>

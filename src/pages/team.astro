@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../layouts/components/Footer.astro';
 import Header from '../layouts/components/Header.astro';
@@ -13,7 +13,7 @@ const teamMembers = allMembers.sort((a, b) => a.data.order - b.data.order);
 // Pre-render all content
 const renderedMembers = await Promise.all(
   teamMembers.map(async (member) => {
-    const { Content } = await member.render();
+    const { Content } = await render(member);
     return { ...member, Content };
   })
 );
@@ -36,7 +36,7 @@ const renderedMembers = await Promise.all(
       >
         {
           teamMembers.map((member) => (
-            <a href={`#${member.slug}`} class="jump-link">
+            <a href={`#${member.id}`} class="jump-link">
               {member.data.name.split(' ')[0]}
             </a>
           ))
@@ -45,12 +45,12 @@ const renderedMembers = await Promise.all(
     </PageHeader>
 
     <Section variant="default">
-      <div class="grid gap-8 max-w-4xl mx-auto">
+      <div class="grid gap-12 max-w-5xl mx-auto">
         {
-          renderedMembers.map(({ slug, data, Content }, index) => (
+          renderedMembers.map(({ id, data, Content }, index) => (
             <article
-              id={slug}
-              class={`card bg-base-200 flex-col md:flex-row md:items-stretch scroll-mt-24 overflow-hidden animate-fade-up stagger-${(index % 4) + 1}`}
+              id={id}
+              class={`flex flex-col md:flex-row md:items-stretch gap-0 scroll-mt-24 overflow-hidden rounded-xl animate-fade-up stagger-${(index % 4) + 1}`}
             >
               <figure class="md:w-2/5 shrink-0 relative">
                 <PlayerAvatar
@@ -59,16 +59,18 @@ const renderedMembers = await Promise.all(
                   class="md:absolute md:inset-0 rounded-none h-64 md:h-full shrink-0"
                 />
               </figure>
-              <div class="card-body md:w-3/5 p-6 md:p-8">
-                <h2 class="card-title text-2xl mb-2">{data.name}</h2>
-                <div class="flex gap-2 flex-wrap mb-4">
-                  <span class="badge badge-primary badge-lg">{data.role}</span>
+              <div class="bg-base-200 md:w-3/5 p-6 md:p-10">
+                <h2 class="text-2xl mb-3">{data.name}</h2>
+                <div class="flex gap-2 flex-wrap mb-5">
+                  <span class="badge badge-accent badge-lg text-accent-content">
+                    {data.role}
+                  </span>
                   {data.pdga && (
                     <a
                       href={`https://www.pdga.com/player/${data.pdga}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="badge badge-outline badge-lg hover:badge-secondary gap-1.5 transition-colors"
+                      class="badge badge-ghost badge-lg hover:bg-accent/10 gap-1.5 transition-colors"
                     >
                       PDGA #{data.pdga}
                       <svg
@@ -100,13 +102,13 @@ const renderedMembers = await Promise.all(
 
     <!-- CTA Section -->
     <Section variant="alt">
-      <div class="text-center">
-        <h2 class="section-title mb-4">Vil du vite mer?</h2>
-        <p class="lead mb-8">
+      <div class="max-w-5xl">
+        <h2 class="mb-4">Vil du vite mer?</h2>
+        <p class="lead max-w-xl mb-10">
           Ta kontakt om du er interessert i samarbeid eller har spørsmål om
           teamet.
         </p>
-        <a href="/kontakt" class="btn btn-primary btn-lg gap-2">
+        <a href="/kontakt" class="btn btn-accent btn-lg gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"

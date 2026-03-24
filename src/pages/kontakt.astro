@@ -84,26 +84,27 @@ const getsItems = [
 
     <!-- Sponsor section -->
     <Section id="sponsor" variant="alt">
-      <div class="text-center mb-12">
+      <!-- Asymmetric header -->
+      <div class="max-w-5xl mb-14">
         <span
-          class="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4"
+          class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4"
         >
           Sponsormuligheter
         </span>
-        <h2 class="section-title">Bli sponsor</h2>
-        <p class="section-lead lead">
+        <h2>Bli sponsor</h2>
+        <p class="lead max-w-xl mt-4">
           Vi søker samarbeidspartnere som vil være med på å løfte diskgolf på
           Vestlandet. Diskgolf vokser raskt – bli med på reisen!
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- What we need -->
-        <div class="card bg-base-100 border-2 border-primary/20">
+      <div class="grid lg:grid-cols-2 gap-8 max-w-5xl">
+        <!-- What we need – tonal surface layering -->
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <div
-                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +121,7 @@ const getsItems = [
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl">Dette trenger vi</h3>
+              <h3 class="text-xl tracking-tight">Dette trenger vi</h3>
             </div>
             <ul class="space-y-4">
               {
@@ -129,7 +130,9 @@ const getsItems = [
                     <span class="w-2 h-2 mt-2 rounded-full bg-accent shrink-0" />
                     <div>
                       <p class="font-medium">{item.title}</p>
-                      <p class="text-sm opacity-75">{item.description}</p>
+                      <p class="text-sm text-base-content/65">
+                        {item.description}
+                      </p>
                     </div>
                   </li>
                 ))
@@ -138,12 +141,12 @@ const getsItems = [
           </div>
         </div>
 
-        <!-- What you get -->
-        <div class="card bg-base-100 border-2 border-accent/30">
+        <!-- What you get – tonal surface layering -->
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="flex items-center gap-3 mb-4">
               <div
-                class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center"
+                class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +163,7 @@ const getsItems = [
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl">Dette får du</h3>
+              <h3 class="text-xl tracking-tight">Dette får du</h3>
             </div>
             <ul class="space-y-4">
               {
@@ -182,7 +185,9 @@ const getsItems = [
                     </svg>
                     <div>
                       <p class="font-medium">{item.title}</p>
-                      <p class="text-sm opacity-75">{item.description}</p>
+                      <p class="text-sm text-base-content/65">
+                        {item.description}
+                      </p>
                     </div>
                   </li>
                 ))
@@ -192,11 +197,11 @@ const getsItems = [
         </div>
       </div>
 
-      <div class="text-center mt-12">
+      <div class="mt-14">
         <p class="mb-6 text-lg">Interessert i å høre mer?</p>
         <a
           href="mailto:sponsor@bergendiskgolf.no"
-          class="btn btn-primary btn-lg gap-2"
+          class="btn btn-accent btn-lg gap-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

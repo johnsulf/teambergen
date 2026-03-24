@@ -19,15 +19,16 @@ import FeatureCard from '../components/FeatureCard.astro';
     />
 
     <Section variant="default">
-      <div class="text-center mb-12">
-        <h2 class="section-title">Hva vi står for</h2>
-        <p class="section-lead lead">
+      <!-- Asymmetric header -->
+      <div class="max-w-5xl mb-14">
+        <h2>Hva vi står for</h2>
+        <p class="lead max-w-xl mt-4">
           Team Bergen? handler om mer enn å kaste disker. Vi bygger fellesskap,
           utvikler spillere og setter Vestlandet på diskgolfkartet.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
         <FeatureCard
           icon="users"
           title="Inkluderende miljø"
@@ -42,13 +43,13 @@ import FeatureCard from '../components/FeatureCard.astro';
     </Section>
 
     <Section variant="alt">
-      <div class="text-center">
-        <h2 class="section-title mb-4">Bli kjent med gjengen</h2>
-        <p class="lead mb-8">
+      <div class="max-w-5xl">
+        <h2 class="mb-4">Bli kjent med gjengen</h2>
+        <p class="lead max-w-xl mb-10">
           Bak Team Bergen? står fire spillere med ulik bakgrunn og erfaring, men
           felles lidenskap for diskgolf.
         </p>
-        <a href="/team" class="btn btn-primary btn-lg gap-2">
+        <a href="/team" class="btn btn-accent btn-lg gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"

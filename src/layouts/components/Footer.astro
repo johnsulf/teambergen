@@ -2,22 +2,34 @@
 
 ---
 
-<footer class="bg-base-200 border-t border-base-300">
+<footer class="bg-team-navy text-white/90">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div
-      class="py-12 flex flex-col md:flex-row justify-between items-center gap-8"
+      class="py-14 flex flex-col md:flex-row justify-between items-center gap-8"
     >
       <!-- Brand -->
       <div class="text-center md:text-left">
         <span class="title text-xl">tb?</span>
-        <p class="text-sm opacity-70 mt-1">Diskgolfteam fra Bergen</p>
+        <p class="text-sm text-white/50 mt-1">Diskgolfteam fra Bergen</p>
       </div>
 
       <!-- Navigation -->
-      <nav class="flex flex-wrap justify-center gap-6">
-        <a href="/om-oss" class="link link-hover text-sm">Om oss</a>
-        <a href="/team" class="link link-hover text-sm">Teamet</a>
-        <a href="/kontakt" class="link link-hover text-sm">Kontakt</a>
+      <nav class="flex flex-wrap justify-center gap-8">
+        <a
+          href="/om-oss"
+          class="text-sm text-white/60 hover:text-accent transition-colors"
+          >Om oss</a
+        >
+        <a
+          href="/team"
+          class="text-sm text-white/60 hover:text-accent transition-colors"
+          >Teamet</a
+        >
+        <a
+          href="/kontakt"
+          class="text-sm text-white/60 hover:text-accent transition-colors"
+          >Kontakt</a
+        >
       </nav>
 
       <!-- Social links -->
@@ -25,7 +37,7 @@
         <a
           href="https://www.instagram.com/teambergen_dg/"
           aria-label="Følg Team Bergen? på Instagram"
-          class="btn btn-ghost btn-sm btn-circle hover:bg-primary/10 hover:text-primary transition-colors"
+          class="btn btn-ghost btn-sm btn-circle text-white/60 hover:text-accent transition-colors"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -44,7 +56,7 @@
         <a
           href="https://www.facebook.com/teambergendg"
           aria-label="Følg Team Bergen? på Facebook"
-          class="btn btn-ghost btn-sm btn-circle hover:bg-primary/10 hover:text-primary transition-colors"
+          class="btn btn-ghost btn-sm btn-circle text-white/60 hover:text-accent transition-colors"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -63,9 +75,11 @@
       </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="py-4 border-t border-base-300 text-center">
-      <p class="text-xs opacity-60">
+    <!-- Copyright – tonal shift instead of border -->
+    <div
+      class="py-4 bg-team-navy-light/20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 text-center"
+    >
+      <p class="text-xs text-white/40">
         &copy; {new Date().getFullYear()} Team Bergen?. Alle rettigheter reservert.
       </p>
     </div>

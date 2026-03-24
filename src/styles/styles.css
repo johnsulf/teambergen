@@ -7,25 +7,21 @@
   name: 'team';
   color-scheme: light;
 
-  /* Brand colors (Figma) */
-  --color-primary: #004371;
+  --color-primary: #002c4d;
   --color-primary-content: #ffffff;
-  --color-secondary: #2ca4ea;
-  --color-secondary-content: #004371;
-  --color-accent: #ffad09;
-  --color-accent-content: #004371;
+  --color-secondary: #004371;
+  --color-secondary-content: #ffffff;
+  --color-accent: #ffbb00;
+  --color-accent-content: #261900;
 
-  /* Neutral */
-  --color-neutral: #004371;
+  --color-neutral: #002c4d;
   --color-neutral-content: #ffffff;
 
-  /* Base surfaces */
   --color-base-100: #ffffff;
-  --color-base-200: #f5f7fa;
-  --color-base-300: #e8ecf2;
-  --color-base-content: #004371;
+  --color-base-200: #eef2f7;
+  --color-base-300: #e1e8f0;
+  --color-base-content: #002c4d;
 
-  /* Semantic colors */
   --color-info: oklch(65% 0.18 230);
   --color-info-content: oklch(98% 0.01 230);
   --color-success: oklch(65% 0.2 145);
@@ -35,26 +31,23 @@
   --color-error: oklch(60% 0.22 25);
   --color-error-content: oklch(98% 0.01 25);
 
-  /* Border radius */
   --radius-selector: 1rem;
-  --radius-field: 0.5rem;
+  --radius-field: 0.375rem;
   --radius-box: 0.75rem;
 
-  /* Sizes */
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
 
-  /* Border & effects */
   --border: 1px;
-  --depth: 1;
+  --depth: 0;
   --noise: 0;
 }
 
 @theme {
-  /* Team colors for direct Tailwind use */
-  --color-team-dark: #004371;
-  --color-team-light: #2ca4ea;
-  --color-team-gold: #ffad09;
+  --color-team-navy: #002c4d;
+  --color-team-navy-light: #004371;
+  --color-team-gold: #ffbb00;
+  --color-team-teal: #003131;
   --font-header: 'Bevan', serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -67,6 +60,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Display / headlines – Bevan for "Legacy" weight */
 h1,
 h2,
 h3,
@@ -75,37 +69,38 @@ h5,
 h6 {
   font-family: 'Bevan', serif;
   font-weight: 400;
-  letter-spacing: 0.01em;
 }
 
-/* Hero headings - gold with shadow */
+/* Display headline – towering, dramatic */
 h1 {
   color: var(--color-team-gold);
-  text-shadow: -1px -1px 0 var(--color-team-dark);
-  font-size: clamp(2.5rem, 6vw + 1rem, 4rem);
-  line-height: 1.1;
+  text-shadow: 2px 2px 0 var(--color-team-navy);
+  font-size: clamp(3rem, 8vw + 1rem, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
-/* Section headings - dark blue, cleaner look */
+/* Section headings – tight, professional */
 h2 {
-  color: var(--color-team-dark);
-  font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
-  line-height: 1.2;
+  color: var(--color-team-navy);
+  font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-/* Subsection headings - primary color for subtle accent */
 h3 {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: clamp(1.25rem, 2vw + 0.5rem, 1.5rem);
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
-/* Minor headings */
 h4,
 h5,
 h6 {
   color: var(--color-base-content);
+  letter-spacing: -0.01em;
 }
 
 p {
@@ -116,11 +111,11 @@ p {
   letter-spacing: -0.01em;
 }
 
-/* Lead text for intros */
+/* Lead text – editorial introductions (body-lg) */
 .lead {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: oklch(from var(--color-base-content) l c h / 0.85);
+  color: oklch(from var(--color-base-content) l c h / 0.8);
 }
 
 @media (min-width: 768px) {
@@ -129,7 +124,7 @@ p {
   }
 }
 
-/* Subtle noise texture overlay */
+/* Noise texture overlay */
 .bg-noise {
   position: relative;
 }
@@ -145,19 +140,13 @@ p {
   z-index: 1;
 }
 
-/* Hero gradient backgrounds */
+/* Signature 135° gradient – pro-stadium shimmer */
 .hero-gradient {
   background: linear-gradient(
     135deg,
-    var(--color-base-100) 0%,
-    var(--color-base-200) 50%,
-    var(--color-base-100) 100%
+    var(--color-team-navy) 0%,
+    var(--color-team-navy-light) 100%
   );
-}
-
-/* Section alternating backgrounds */
-.section-alt {
-  background-color: var(--color-base-200);
 }
 
 /* Fade-in animation on scroll */
@@ -174,7 +163,6 @@ p {
   }
 }
 
-/* Staggered delays for children */
 .stagger-1 {
   animation-delay: 0.1s;
 }
@@ -188,7 +176,6 @@ p {
   animation-delay: 0.4s;
 }
 
-/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up {
     opacity: 1;
@@ -197,106 +184,106 @@ p {
   }
 }
 
-/* Enhanced button hover states */
+/* Primary CTA – yellow, high-impact */
+.btn-accent {
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px oklch(from var(--color-accent) l c h / 0.35);
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+/* Secondary CTA – navy, authority */
 .btn-primary {
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px oklch(from var(--color-primary) l c h / 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px oklch(from var(--color-primary) l c h / 0.35);
 }
 
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* Ghost/outline button enhancement */
-.btn-outline:hover {
-  transform: translateY(-1px);
-}
-
-/* Focus visible states for accessibility */
+/* Focus visible for accessibility */
 .btn:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Card hover effects */
+/* Card interactive lift – ambient navy-tinted shadow */
 .card-hover {
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px oklch(from var(--color-base-content) l c h / 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 44, 77, 0.08);
 }
 
-/* Section spacing utility */
+/* Section spacing */
 .section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 }
 
-/* Team image effect - golden tint matching team-gold */
-.team-image {
-  filter: sepia(0.3) saturate(1.2) hue-rotate(-10deg) contrast(1.05)
-    brightness(1.05);
-  transition: filter 0.3s ease;
+/* Glassmorphism utility */
+.glass-surface {
+  background: oklch(from var(--color-team-navy) l c h / 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.team-image:hover {
-  filter: sepia(0) saturate(1) hue-rotate(0deg) contrast(1) brightness(1);
-}
-
+/* Brand title mark */
 .title {
   color: var(--color-team-gold);
-  text-shadow: -1px -1px 0 var(--color-team-dark);
-  font-weight: 600;
+  text-shadow: 1px 1px 0 var(--color-team-navy);
+  font-weight: 400;
   font-family: 'Bevan', serif;
   text-transform: uppercase;
   font-size: 2rem;
+  letter-spacing: -0.02em;
 }
 
-/* Jump link chips */
+/* Jump link chips – smooth pebbles */
 .jump-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 .jump-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   border-radius: 9999px;
-  background-color: var(--color-base-200);
-  color: var(--color-base-content);
+  background-color: oklch(from var(--color-primary-content) l c h / 0.15);
+  color: var(--color-primary-content);
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .jump-link:hover {
-  background-color: var(--color-primary);
-  color: var(--color-primary-content);
+  background-color: var(--color-accent);
+  color: var(--color-accent-content);
   transform: translateY(-1px);
 }
 
-/* Prose improvements */
+/* Prose */
 .prose-compact {
   max-width: 65ch;
 }
@@ -310,30 +297,7 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Icon wrapper utility */
-.icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  flex-shrink: 0;
-}
-
-/* Section title utility */
-.section-title {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section-lead {
-  text-align: center;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-}
-
-/* Better list styling */
+/* Feature list */
 .feature-list {
   list-style: none;
   padding: 0;

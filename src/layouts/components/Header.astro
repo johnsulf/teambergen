@@ -2,21 +2,43 @@
 
 ---
 
-<header class="bg-base-200 relative z-50">
+<header class="fixed top-0 left-0 right-0 z-50 glass-surface">
   <nav class="navbar max-w-7xl mx-auto">
     <div class="navbar-start">
-      <a href="/" class="title"> tb? </a>
+      <a href="/" class="title text-xl"> tb? </a>
     </div>
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a href="/om-oss">Om oss</a></li>
-        <li><a href="/team">Teamet</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
+      <ul class="menu menu-horizontal gap-1">
+        <li>
+          <a
+            href="/om-oss"
+            class="text-primary-content/80 hover:text-accent font-medium tracking-tight transition-colors"
+            >Om oss</a
+          >
+        </li>
+        <li>
+          <a
+            href="/team"
+            class="text-primary-content/80 hover:text-accent font-medium tracking-tight transition-colors"
+            >Teamet</a
+          >
+        </li>
+        <li>
+          <a
+            href="/kontakt"
+            class="text-primary-content/80 hover:text-accent font-medium tracking-tight transition-colors"
+            >Kontakt</a
+          >
+        </li>
       </ul>
     </div>
     <div class="navbar-end">
       <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost text-primary-content/80"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -33,13 +55,17 @@
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-200 rounded-box z-100 mt-3 w-52 p-2 shadow"
+          class="menu menu-sm dropdown-content glass-surface rounded-box z-100 mt-3 w-52 p-2"
         >
-          <li><a href="/om-oss">Om oss</a></li>
-          <li><a href="/team">Teamet</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/om-oss" class="text-primary-content/90">Om oss</a></li>
+          <li><a href="/team" class="text-primary-content/90">Teamet</a></li>
+          <li>
+            <a href="/kontakt" class="text-primary-content/90">Kontakt</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
+<!-- Spacer to account for fixed header -->
+<div class="h-16"></div>
