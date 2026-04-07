@@ -24,13 +24,12 @@ export function SponsorLogos({
             className="hover:opacity-80 transition-opacity"
             title={sponsor.name}
           >
-            <div className="relative w-28 h-14 md:w-40 md:h-20 flex items-center justify-center">
+            <div className="relative w-28 h-14 md:w-40 md:h-20">
               <Image
                 src={sponsor.logo}
                 alt={sponsor.name}
-                width={160}
-                height={80}
-                className="w-auto h-auto max-w-full max-h-full object-contain"
+                fill
+                className="object-contain"
               />
             </div>
           </a>
