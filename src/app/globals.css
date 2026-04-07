@@ -36,7 +36,9 @@
   --sidebar-border: oklch(0 0 0);
   --sidebar-ring: oklch(0.6489 0.237 26.9728);
   --font-sans: Inter, ui-sans-serif, sans-serif, system-ui;
-  --font-heading: var(--font-bevan), serif;
+  --font-heading:
+    var(--font-space-grotesk), ui-sans-serif, sans-serif, system-ui;
+  --font-brand: var(--font-bevan), serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: Space Mono, monospace;
   --radius: 0px;
@@ -96,7 +98,9 @@
   --sidebar-border: oklch(1 0 0);
   --sidebar-ring: oklch(0.7044 0.1872 23.1858);
   --font-sans: Inter, ui-sans-serif, sans-serif, system-ui;
-  --font-heading: var(--font-bevan), serif;
+  --font-heading:
+    var(--font-space-grotesk), ui-sans-serif, sans-serif, system-ui;
+  --font-brand: var(--font-bevan), serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: Space Mono, monospace;
   --radius: 0px;
@@ -156,6 +160,7 @@
 
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
+  --font-brand: var(--font-brand);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 

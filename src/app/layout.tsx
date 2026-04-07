@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Bevan } from "next/font/google";
+import { Inter, Bevan, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -15,6 +15,12 @@ const bevan = Bevan({
   subsets: ["latin"],
   variable: "--font-bevan",
   weight: ["400"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -60,7 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="no" className={`${inter.variable} ${bevan.variable}`}>
+    <html
+      lang="no"
+      className={`${inter.variable} ${bevan.variable} ${spaceGrotesk.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
