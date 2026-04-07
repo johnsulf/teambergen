@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b-2 border-border">
       <nav className="flex items-center justify-between max-w-5xl mx-auto h-14 px-4 sm:px-6">
-        <Link href="/" className="text-xl font-bold tracking-wide font-brand">
+        <Link href="/" className="tracking-wide font-brand">
           TEAM <span className="text-primary"> BERGEN?</span>
         </Link>
 
