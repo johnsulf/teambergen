@@ -18,7 +18,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg text-secondary-foreground/70 max-w-lg mt-6 leading-relaxed">
-              Vi er en gjeng entusiaster som vil litt mer med sporten vår — både
+              Vi er en gjeng entusiaster som vil litt mer med sporten vår - både
               på og utenfor banen.
             </p>
 

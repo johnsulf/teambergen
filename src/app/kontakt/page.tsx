@@ -64,7 +64,7 @@ export default function KontaktPage() {
             </h2>
             <p className="text-muted-foreground max-w-md mb-8">
               Enten du er nysgjerrig på teamet, vil samarbeide, eller bare slå
-              av en prat om diskgolf — her finner du oss.
+              av en prat om diskgolf - her finner du oss.
             </p>
           </div>
           <div className="w-full lg:w-auto lg:min-w-80">
@@ -77,7 +77,7 @@ export default function KontaktPage() {
         <h2 className="text-3xl font-bold tracking-tight mb-3">Bli sponsor</h2>
         <p className="text-muted-foreground max-w-xl mb-12">
           Vi søker samarbeidspartnere som vil være med på å løfte diskgolf på
-          Vestlandet. Diskgolf vokser raskt — bli med på reisen!
+          Vestlandet. Diskgolf vokser raskt - bli med på reisen!
         </p>
 
         <div className="grid lg:grid-cols-2 gap-4">

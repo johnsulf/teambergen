@@ -30,7 +30,7 @@ export function SponsorLogos({
                 alt={sponsor.name}
                 width={160}
                 height={80}
-                className="max-w-full max-h-full object-contain"
+                className="w-auto h-auto max-w-full max-h-full object-contain"
               />
             </div>
           </a>

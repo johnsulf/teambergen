@@ -25,7 +25,7 @@ const values = [
   {
     title: "Seriøs satsing",
     description:
-      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre — både individuelt og som lag.",
+      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre - både individuelt og som lag.",
   },
 ];
 
@@ -47,12 +47,12 @@ export default function OmOssPage() {
               <p>
                 Team Bergen? startet med noe så enkelt som en felles kjærlighet
                 for diskgolf og miljøet i Bergen. Det som begynte som uformelle
-                runder på lokale baner, utviklet seg raskt til noe større — et
+                runder på lokale baner, utviklet seg raskt til noe større - et
                 lag bygget på samhold og konkurranseinstinkt.
               </p>
               <p>
                 Spørsmålstegnet i navnet er ikke tilfeldig. Det er inspirert av
-                det velkjente <em>Bergen?</em>-skiltet på Flesland — et uttrykk
+                det velkjente <em>Bergen?</em>-skiltet på Flesland - et uttrykk
                 mange kjenner igjen, og som gir navnet en tydelig forankring i
                 byen vi representerer. For oss handler Team Bergen? om
                 utvikling, samhold og ambisjonen om å bli bedre sammen.
@@ -61,7 +61,7 @@ export default function OmOssPage() {
                 I dag satser vi målrettet. Vi trener sammen, konkurrerer
                 regionalt og nasjonalt, og jobber aktivt for å styrke
                 diskgolfmiljøet på Vestlandet. Vi representerer Bergen med
-                stolthet — både i måten vi spiller på og i fellesskapet vi
+                stolthet - både i måten vi spiller på og i fellesskapet vi
                 bygger.
               </p>
             </div>

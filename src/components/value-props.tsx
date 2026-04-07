@@ -4,7 +4,7 @@ const valueProps = [
   {
     title: "Seriøs satsing",
     description:
-      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre — både individuelt og som lag.",
+      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre - både individuelt og som lag.",
   },
   {
     title: "Sterkt fellesskap",
@@ -26,7 +26,7 @@ export function ValueProps() {
           Hvorfor Team Bergen?
         </h2>
         <p className="text-muted-foreground max-w-xl mb-12">
-          Vi er mer enn bare et team — vi er et fellesskap av diskgolfspillere
+          Vi er mer enn bare et team - vi er et fellesskap av diskgolfspillere
           som vil utvikle oss og sporten i regionen.
         </p>
 
