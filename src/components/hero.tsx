@@ -12,9 +12,9 @@ export function Hero() {
             <p className="text-sm font-medium text-secondary-foreground/50 uppercase tracking-wider mb-3">
               Diskgolfteam fra Bergen
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-none font-brand">
-              Team Bergen
-              <span className="text-primary">?</span>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-wider leading-none font-brand">
+              TEAM
+              <span className="text-primary"> BERGEN?</span>
             </h1>
 
             <p className="text-lg text-secondary-foreground/70 max-w-lg mt-6 leading-relaxed">
