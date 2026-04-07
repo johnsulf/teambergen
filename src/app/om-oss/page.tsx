@@ -66,12 +66,6 @@ export default function OmOssPage() {
               </p>
             </div>
           </div>
-          <div
-            className="shrink-0 w-48 h-48 lg:w-64 lg:h-64 border-2 border-border bg-primary flex items-center justify-center shadow-md hidden lg:flex"
-            aria-hidden="true"
-          >
-            <span className="text-7xl lg:text-8xl">🥏</span>
-          </div>
         </div>
       </Section>
 
@@ -107,11 +101,11 @@ export default function OmOssPage() {
             <p className="text-secondary-foreground/70 text-lg leading-relaxed">
               Vi drømmer om å bygge det sterkeste diskgolfteamet på Vestlandet.
               Med flere turneringer, bedre trening og et voksende nettverk av
-              sponsorer, jobber vi mot å sette Bergen på det nasjonale
+              sponsorer, jobber vi med mål om å sette Bergen på det nasjonale
               diskgolfkartet.
             </p>
           </div>
-          <div className="shrink-0 flex flex-col gap-3 items-start">
+          <div className="shrink-0 flex gap-3 items-start">
             <Button render={<Link href="/team" />}>Møt teamet</Button>
             <Button variant="outline" render={<Link href="/kontakt#sponsor" />}>
               Bli sponsor

@@ -34,13 +34,6 @@ export function SponsorTeaser() {
               Ta kontakt
             </Button>
           </div>
-
-          <div
-            className="shrink-0 w-48 h-48 lg:w-64 lg:h-64 border-2 border-secondary-foreground/20 bg-primary flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <span className="text-7xl lg:text-8xl">🥏</span>
-          </div>
         </div>
       </div>
     </section>
