@@ -1,39 +1,31 @@
-import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
   id?: string;
-  variant?: 'default' | 'alt' | 'primary' | 'accent' | 'teal';
-  narrow?: boolean;
+  variant?: "default" | "muted" | "secondary";
   className?: string;
   children: ReactNode;
 }
 
-const bgClasses: Record<string, string> = {
-  default: 'bg-background',
-  alt: 'bg-muted',
-  primary: 'hero-gradient text-white bg-noise',
-  accent: 'bg-accent text-accent-foreground',
-  teal: 'bg-team-teal text-white bg-noise',
-};
-
 export function Section({
   id,
-  variant = 'default',
-  narrow = false,
+  variant = "default",
   className,
   children,
 }: SectionProps) {
+  const variantClasses = {
+    default: "bg-background",
+    muted: "bg-muted",
+    secondary: "bg-secondary text-secondary-foreground",
+  };
+
   return (
-    <section id={id} className={cn('section-padding', bgClasses[variant], className)}>
-      <div
-        className={cn(
-          'container mx-auto px-4 sm:px-6 lg:px-8',
-          narrow ? 'max-w-3xl' : 'max-w-6xl'
-        )}
-      >
-        {children}
-      </div>
+    <section
+      id={id}
+      className={cn("py-16 md:py-24", variantClasses[variant], className)}
+    >
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">{children}</div>
     </section>
   );
 }

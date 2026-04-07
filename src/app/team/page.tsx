@@ -1,14 +1,16 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { teamMembers } from '@/data/team';
-import { PageHeader } from '@/components/page-header';
-import { Section } from '@/components/section';
-import { PlayerAvatar } from '@/components/player-avatar';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { teamMembers } from "@/data/team";
+import { PageHeader } from "@/components/page-header";
+import { Section } from "@/components/section";
+import { PlayerAvatar } from "@/components/player-avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: 'Spillerne i Team Bergen? – Diskgolfteamet fra Vestlandet',
+  title: "Spillerne i Team Bergen? – Diskgolfteamet fra Vestlandet",
   description:
-    'Møt spillerne i Team Bergen? – Morten Dahlberg, Olav Breistein, Michael White og Erlend Johnsen. Diskgolf-entusiaster fra Bergen som konkurrerer lokalt og nasjonalt.',
+    "Møt spillerne i Team Bergen? – Morten Dahlberg, Olav Breistein, Michael White og Erlend Johnsen. Diskgolf-entusiaster fra Bergen som konkurrerer lokalt og nasjonalt.",
 };
 
 export default function TeamPage() {
@@ -18,63 +20,52 @@ export default function TeamPage() {
         title="Møt teamet"
         lead="Fire spillere med ulik bakgrunn, men felles mål: å bli bedre og ha det gøy med diskgolf."
       >
-        {/* Jump links */}
-        <nav
-          className="jump-links mt-8 animate-fade-up stagger-2"
-          aria-label="Gå til spiller"
-        >
+        <nav className="flex flex-wrap gap-2 mt-8" aria-label="Gå til spiller">
           {teamMembers.map((member) => (
-            <a key={member.id} href={`#${member.id}`} className="jump-link">
-              {member.name.split(' ')[0]}
-            </a>
+            <Button
+              key={member.id}
+              variant="outline"
+              size="sm"
+              render={<a href={`#${member.id}`} />}
+            >
+              {member.name.split(" ")[0]}
+            </Button>
           ))}
         </nav>
       </PageHeader>
 
-      <Section variant="default">
-        <div className="grid gap-12 max-w-5xl mx-auto">
-          {teamMembers.map((member, index) => (
+      <Section>
+        <div className="grid gap-12">
+          {teamMembers.map((member) => (
             <article
               key={member.id}
               id={member.id}
-              className={`flex flex-col md:flex-row md:items-stretch gap-0 scroll-mt-24 overflow-hidden rounded-xl animate-fade-up stagger-${(index % 4) + 1}`}
+              className="flex flex-col md:flex-row md:items-stretch gap-0 scroll-mt-24 overflow-hidden border-2 border-border shadow-sm"
             >
               <figure className="md:w-2/5 shrink-0 relative">
                 <PlayerAvatar
                   name={member.name}
                   size="lg"
-                  className="md:absolute md:inset-0 rounded-none h-64 md:h-full shrink-0"
+                  className="h-64 md:h-full md:absolute md:inset-0"
                 />
               </figure>
               <div className="bg-muted md:w-3/5 p-6 md:p-10">
-                <h2 className="text-2xl mb-3">{member.name}</h2>
+                <h2 className="text-2xl font-bold mb-3">{member.name}</h2>
                 <div className="flex gap-2 flex-wrap mb-5">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-team-gold text-[#261900] text-sm font-medium">
-                    {member.role}
-                  </span>
+                  <Badge>{member.role}</Badge>
                   {member.pdga && (
-                    <a
-                      href={`https://www.pdga.com/player/${member.pdga}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-sm font-medium hover:bg-team-gold/10 transition-colors"
+                    <Badge
+                      variant="outline"
+                      render={
+                        <a
+                          href={`https://www.pdga.com/player/${member.pdga}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
                     >
                       PDGA #{member.pdga}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-3.5 w-3.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </a>
+                    </Badge>
                   )}
                 </div>
                 <div className="prose-compact">{member.bio}</div>
@@ -84,35 +75,15 @@ export default function TeamPage() {
         </div>
       </Section>
 
-      {/* CTA Section */}
-      <Section variant="alt">
-        <div className="max-w-5xl">
-          <h2 className="mb-4">Vil du vite mer?</h2>
-          <p className="lead max-w-xl mb-10">
-            Ta kontakt om du er interessert i samarbeid eller har spørsmål om
-            teamet.
-          </p>
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-team-gold text-[#261900] font-medium btn-accent"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            Kontakt oss
-          </Link>
-        </div>
+      <Section variant="muted">
+        <h2 className="text-3xl font-bold tracking-tight mb-4">
+          Vil du vite mer?
+        </h2>
+        <p className="text-muted-foreground max-w-xl mb-8">
+          Ta kontakt om du er interessert i samarbeid eller har spørsmål om
+          teamet.
+        </p>
+        <Button render={<Link href="/kontakt" />}>Kontakt oss</Button>
       </Section>
     </>
   );
