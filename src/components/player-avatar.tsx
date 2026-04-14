@@ -1,7 +1,9 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface PlayerAvatarProps {
   name: string;
+  image?: string;
   size?: "sm" | "base" | "lg";
   className?: string;
 }
@@ -31,6 +33,7 @@ function getColor(str: string): string {
 
 export function PlayerAvatar({
   name,
+  image,
   size = "base",
   className,
 }: PlayerAvatarProps) {
@@ -42,6 +45,18 @@ export function PlayerAvatar({
     base: "w-full aspect-square text-4xl md:text-5xl",
     lg: "w-full aspect-square text-5xl md:text-7xl",
   };
+
+  if (image) {
+    return (
+      <Image
+        src={image}
+        alt={name}
+        width={800}
+        height={534}
+        className={cn("object-cover", sizeClasses[size], className)}
+      />
+    );
+  }
 
   return (
     <div

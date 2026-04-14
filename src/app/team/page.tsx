@@ -45,6 +45,7 @@ export default function TeamPage() {
               <figure className="md:w-2/5 shrink-0 relative">
                 <PlayerAvatar
                   name={member.name}
+                  image={member.image}
                   size="lg"
                   className="h-64 md:h-full md:absolute md:inset-0"
                 />

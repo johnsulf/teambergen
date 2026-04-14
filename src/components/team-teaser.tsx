@@ -19,7 +19,7 @@ export function TeamTeaser() {
           {teamMembers.map((member) => (
             <Link key={member.id} href={`/team#${member.id}`} className="group">
               <div className="border-2 border-border overflow-hidden shadow-xs hover:shadow-md transition-shadow">
-                <PlayerAvatar name={member.name} />
+                <PlayerAvatar name={member.name} image={member.image} />
               </div>
               <div className="mt-3">
                 <p className="font-bold">{member.name.split(" ")[0]}</p>

@@ -1,20 +1,22 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 export interface TeamMember {
   id: string;
   name: string;
   role: string;
   pdga?: number;
+  image?: string;
   order: number;
   bio: ReactNode;
 }
 
 export const teamMembers: TeamMember[] = [
   {
-    id: 'morten-dahlberg',
-    name: 'Morten Dahlberg',
-    role: 'Teamleder, Arrangør',
+    id: "morten-dahlberg",
+    name: "Morten Dahlberg",
+    role: "Teamleder, Arrangør",
     pdga: 222425,
+    image: "/images/morten.webp",
     order: 1,
     bio: (
       <>
@@ -33,10 +35,11 @@ export const teamMembers: TeamMember[] = [
     ),
   },
   {
-    id: 'olav-breistein',
-    name: 'Olav Breistein',
-    role: 'Spiller',
+    id: "olav-breistein",
+    name: "Olav Breistein",
+    role: "Spiller",
     pdga: 59468,
+    image: "/images/olav.webp",
     order: 2,
     bio: (
       <p>
@@ -49,9 +52,9 @@ export const teamMembers: TeamMember[] = [
     ),
   },
   {
-    id: 'michael-white',
-    name: 'Michael White',
-    role: 'Spiller',
+    id: "michael-white",
+    name: "Michael White",
+    role: "Spiller",
     pdga: 196859,
     order: 3,
     bio: (
@@ -66,10 +69,11 @@ export const teamMembers: TeamMember[] = [
     ),
   },
   {
-    id: 'erlend-johnsen',
-    name: 'Erlend Johnsen',
-    role: 'Spiller',
+    id: "erlend-johnsen",
+    name: "Erlend Johnsen",
+    role: "Spiller",
     pdga: 94422,
+    image: "/images/erlend.webp",
     order: 4,
     bio: (
       <p>
