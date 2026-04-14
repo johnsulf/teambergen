@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Section } from "@/components/section";
@@ -66,6 +67,15 @@ export default function OmOssPage() {
               </p>
             </div>
           </div>
+          <figure className="shrink-0 w-full lg:w-2/5 border-2 border-border shadow-sm overflow-hidden">
+            <Image
+              src="/images/mini.webp"
+              alt="Team Bergen? i aksjon på diskgolfbanen"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+            />
+          </figure>
         </div>
       </Section>
 

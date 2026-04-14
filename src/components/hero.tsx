@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.svg";
 
 export function Hero() {
   return (
@@ -33,12 +32,16 @@ export function Hero() {
             </div>
           </div>
 
-          <div
-            className="shrink-0 w-48 h-48 md:w-64 md:h-64 border-2 border-border bg-primary p-6 shadow-md hidden md:flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <Image src={logo} alt="" className="w-full h-full object-contain" />
-          </div>
+          <figure className="shrink-0 w-full lg:w-96 border-2 border-border shadow-md overflow-hidden">
+            <Image
+              src="/images/mini2.webp"
+              alt="Team Bergen? på diskgolfbanen"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </figure>
         </div>
       </div>
     </section>
