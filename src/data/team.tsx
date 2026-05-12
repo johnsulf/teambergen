@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     bio: (
       <p>
         Eirik har på kort tid gjort seg bemerket i diskgolfmiljøet i Bergen. Han
-        er aktiv lokalt og er blant annet primus motor bak Vestkysttouren, der
+        er aktiv lokalt og er blant annet primus motor bak Vestkyst Touren, der
         han har gjort en formidabel jobb med å stable en gammel storhet på beina
         igjen. En av hans store bidrag er arbeidet med å innhente gode sponsorer
         til deltakerne på touren.
