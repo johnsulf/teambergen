@@ -14,7 +14,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "morten-dahlberg",
     name: "Morten Dahlberg",
-    role: "Teamleder, Arrangør",
+    role: "Teamleder",
     pdga: 222425,
     image: "/images/morten.webp",
     order: 1,
@@ -35,12 +35,28 @@ export const teamMembers: TeamMember[] = [
     ),
   },
   {
+    id: "eirik-lauritsen",
+    name: "Eirik Lauritsen",
+    role: "Sponsor- og arrangementsansvarlig",
+    pdga: 278349,
+    order: 2,
+    bio: (
+      <p>
+        Eirik har på kort tid gjort seg bemerket i diskgolfmiljøet i Bergen. Han
+        er aktiv lokalt og er blant annet primus motor bak Vestkysttouren, der
+        han har gjort en formidabel jobb med å stable en gammel storhet på beina
+        igjen. En av hans store bidrag er arbeidet med å innhente gode sponsorer
+        til deltakerne på touren.
+      </p>
+    ),
+  },
+  {
     id: "olav-breistein",
     name: "Olav Breistein",
     role: "Spiller",
     pdga: 59468,
     image: "/images/olav.webp",
-    order: 2,
+    order: 3,
     bio: (
       <p>
         Olav er godt kjent både lokalt og nasjonalt i diskgolfmiljøet. Han er
@@ -56,7 +72,7 @@ export const teamMembers: TeamMember[] = [
     name: "Michael White",
     role: "Spiller",
     pdga: 196859,
-    order: 3,
+    order: 4,
     bio: (
       <p>
         Michael begynte med diskgolf i 2023 og har på kort tid utviklet seg til
@@ -74,7 +90,7 @@ export const teamMembers: TeamMember[] = [
     role: "Spiller",
     pdga: 94422,
     image: "/images/erlend.webp",
-    order: 4,
+    order: 5,
     bio: (
       <p>
         Erlend er en trygg og imøtekommende person som er sentral i
