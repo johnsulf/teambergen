@@ -18,7 +18,8 @@ export default function TeamPage() {
     <>
       <PageHeader
         title="Møt teamet"
-        lead="Fire spillere med ulik bakgrunn, men felles mål: å bli bedre og ha det gøy med diskgolf."
+        lead="Fem spillere med ulik bakgrunn, men felles mål: å ha det gøy med
+          diskgolf."
       >
         <nav className="flex flex-wrap gap-2 mt-8" aria-label="Gå til spiller">
           {teamMembers.map((member) => (

@@ -26,8 +26,9 @@ export function ValueProps() {
           Hvorfor Team Bergen?
         </h2>
         <p className="text-muted-foreground max-w-xl mb-12">
-          Vi er mer enn bare et team - vi er et fellesskap av diskgolfspillere
-          som vil utvikle oss og sporten i regionen.
+          Vi er et fellesskap av diskgolfspillere som vil utvikle oss og sporten
+          i regionen. Spørsmålstegnet er ikke en tilfeldighet - det er en
+          invitasjon til kontakt. Vi er klar for en prat. Spør oss gjerne.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

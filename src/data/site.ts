@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Team Bergen?",
   url: "https://teambergen.no",
   description:
-    "Vi er en gjeng diskgolf-entusiaster fra Bergen og omegn som vil litt mer med sporten vår.",
+    "Vi er en gjeng som vil litt mer med sporten vår - både på og utenfor banen.",
   ogImage: "/og-image.jpg",
 };
 

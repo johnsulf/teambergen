@@ -35,7 +35,7 @@ export default function OmOssPage() {
     <>
       <PageHeader
         title="Om oss"
-        lead="Vi er en gjeng diskgolf-entusiaster fra Bergen som vil litt mer med sporten vår."
+        lead="Vi er en gjeng som vil litt mer med sporten vår - både på og utenfor banen."
       />
 
       <Section>
@@ -46,17 +46,21 @@ export default function OmOssPage() {
             </h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                Team Bergen? startet med noe så enkelt som en felles kjærlighet
+                Team Bergen? startet med noe så enkelt som et felles engasjement
                 for diskgolf og miljøet i Bergen. Det som begynte som uformelle
                 runder på lokale baner, utviklet seg raskt til noe større - et
                 lag bygget på samhold og konkurranseinstinkt.
               </p>
               <p>
                 Spørsmålstegnet i navnet er ikke tilfeldig. Det er inspirert av
-                det velkjente <em>Bergen?</em>-skiltet på Flesland - et uttrykk
-                mange kjenner igjen, og som gir navnet en tydelig forankring i
-                byen vi representerer. For oss handler Team Bergen? om
-                utvikling, samhold og ambisjonen om å bli bedre sammen.
+                det velkjente <em>Bergen?</em>-skiltet på Flesland - noe mange
+                kjenner igjen, og som gir navnet en tydelig forankring i byen vi
+                representerer. For oss handler Team Bergen? om utvikling,
+                samhold og ambisjonen om å bli bedre sammen. Samtidig inviterer
+                spørsmålstegnet til dialog - det er en åpen invitasjon til alle
+                som vil bli bedre kjent med oss og sporten vår. Vi er her for å
+                prate, dele erfaringer og bygge fellesskap - både på og utenfor
+                banen.
               </p>
               <p>
                 I dag satser vi målrettet. Vi trener sammen, konkurrerer

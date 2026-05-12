@@ -11,8 +11,8 @@ export function TeamTeaser() {
           Møt folkene i Team Bergen?
         </h2>
         <p className="text-muted-foreground max-w-xl mb-12">
-          Fire spillere med ulik bakgrunn, men felles mål: å bli bedre og ha det
-          gøy med diskgolf.
+          Fem spillere med ulik bakgrunn, men felles mål: å ha det gøy med
+          diskgolf.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
