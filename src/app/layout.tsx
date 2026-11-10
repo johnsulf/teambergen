@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Team Bergen?",
   },
   description:
-    "Vi er en gjeng som vil litt mer med sporten vår - både på og utenfor banen.",
+    "Fem diskgolfere fra Bergen. Vi spiller turneringer, trener sammen og vil ha flere med ut på banene.",
   openGraph: {
     type: "website",
     locale: "nb_NO",

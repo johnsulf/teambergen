@@ -4,29 +4,29 @@ import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { ScoreCard, type ScoreCardItem } from "@/components/score-card";
 
 export const metadata: Metadata = {
   title: "Om Team Bergen? – Diskgolf i Bergen og på Vestlandet",
   description:
-    "Team Bergen? er et inkluderende diskgolfteam fra Bergen. Vi jobber for å utvikle diskgolf på Vestlandet og skape et sterkt fellesskap for spillere på alle nivåer.",
+    "Team Bergen? er fem diskgolfere fra Bergen. Les om hvordan laget startet, hvor navnet kommer fra og hva vi vil få til.",
 };
 
-const values = [
+const values: ScoreCardItem[] = [
   {
-    title: "Inkluderende miljø",
+    title: "Alle nivåer",
     description:
-      "Vi vil skape et stort og inkluderende miljø der alle er velkomne – uansett nivå. Samtidig gir vi mulighet for de som vil satse og utvikle seg videre.",
+      "Du trenger ikke være god for å spille med oss. Samtidig skal de som vil satse, få gjøre det.",
   },
   {
-    title: "Vekst på Vestlandet",
+    title: "Flere spillere",
     description:
-      "Vi vil gjøre diskgolf så stort som mulig på Vestlandet. Vi jobber for å spre kjennskap til sporten og bygge et sterkt fellesskap i regionen.",
+      "Vi vil at flere på Vestlandet skal prøve diskgolf, og hjelper gjerne til der vi kan.",
   },
   {
-    title: "Seriøs satsing",
+    title: "Bli bedre",
     description:
-      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre - både individuelt og som lag.",
+      "Vi vil bli bedre, hver for oss og som lag. Derfor trener vi sammen og spiller så mange turneringer vi rekker.",
   },
 ];
 
@@ -35,39 +35,28 @@ export default function OmOssPage() {
     <>
       <PageHeader
         title="Om oss"
-        lead="Vi er en gjeng som vil litt mer med sporten vår - både på og utenfor banen."
+        lead="Fem diskgolfere fra Bergen. Vi spiller turneringer, trener sammen og vil ha flere med ut på banene."
       />
 
       <Section>
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="flex-1">
             <h2 className="text-3xl font-bold tracking-tight mb-6">
-              Fra uformelle runder til seriøs satsing
+              Slik startet det
             </h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                Team Bergen? startet med noe så enkelt som et felles engasjement
-                for diskgolf og miljøet i Bergen. Det som begynte som uformelle
-                runder på lokale baner, utviklet seg raskt til noe større - et
-                lag bygget på samhold og konkurranseinstinkt.
+                Team Bergen? begynte med at noen av oss spilte runder sammen på
+                banene rundt Bergen. Etter hvert ble det flere runder, så
+                turneringer, og til slutt et lag.
               </p>
               <p>
-                Spørsmålstegnet i navnet er ikke tilfeldig. Det er inspirert av
-                det velkjente <em>Bergen?</em>-skiltet på Flesland - noe mange
-                kjenner igjen, og som gir navnet en tydelig forankring i byen vi
-                representerer. For oss handler Team Bergen? om utvikling,
-                samhold og ambisjonen om å bli bedre sammen. Samtidig inviterer
-                spørsmålstegnet til dialog - det er en åpen invitasjon til alle
-                som vil bli bedre kjent med oss og sporten vår. Vi er her for å
-                prate, dele erfaringer og bygge fellesskap - både på og utenfor
-                banen.
+                Navnet har vi lånt fra <em>Bergen?</em>-skiltet på Flesland,
+                som de fleste har sett når de har landet i byen.
               </p>
               <p>
-                I dag satser vi målrettet. Vi trener sammen, konkurrerer
-                regionalt og nasjonalt, og jobber aktivt for å styrke
-                diskgolfmiljøet på Vestlandet. Vi representerer Bergen med
-                stolthet - både i måten vi spiller på og i fellesskapet vi
-                bygger.
+                I dag trener vi sammen, spiller turneringer på Vestlandet og
+                ellers i landet, og prøver å få flere med på diskgolf i Bergen.
               </p>
             </div>
           </div>
@@ -84,26 +73,11 @@ export default function OmOssPage() {
       </Section>
 
       <Section variant="muted">
-        <h2 className="text-3xl font-bold tracking-tight mb-3">
-          Hva vi står for
+        <h2 className="text-3xl font-bold tracking-tight mb-10">
+          Det vi vil
         </h2>
-        <p className="text-muted-foreground max-w-xl mb-12">
-          Team Bergen? handler om mer enn å kaste disker. Vi bygger fellesskap,
-          utvikler spillere og setter Vestlandet på diskgolfkartet.
-        </p>
 
-        <div className="grid md:grid-cols-3 gap-4">
-          {values.map((value) => (
-            <Card key={value.title}>
-              <CardContent>
-                <h3 className="font-bold mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <ScoreCard items={values} />
       </Section>
 
       <Section variant="secondary">
@@ -113,10 +87,9 @@ export default function OmOssPage() {
               Veien videre
             </h2>
             <p className="text-secondary-foreground/70 text-lg leading-relaxed">
-              Vi drømmer om å bygge det sterkeste diskgolfteamet på Vestlandet.
-              Med flere turneringer, bedre trening og et voksende nettverk av
-              sponsorer, jobber vi med mål om å sette Bergen på det nasjonale
-              diskgolfkartet.
+              Vi vil gjerne spille flere turneringer og få på plass flere
+              sponsorer. Har du lyst til å støtte oss, eller bare bli kjent med
+              oss, ta kontakt.
             </p>
           </div>
           <div className="shrink-0 flex gap-3 items-start">

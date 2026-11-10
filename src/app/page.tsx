@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/hero";
 import { ValueProps } from "@/components/value-props";
 import { TeamTeaser } from "@/components/team-teaser";
+import { PodcastSection } from "@/components/podcast-section";
 import { SponsorTeaser } from "@/components/sponsor-teaser";
 import { SponsorLogos } from "@/components/sponsor-logos";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <ValueProps />
       <TeamTeaser />
+      <PodcastSection />
       <SponsorTeaser />
       <SponsorLogos variant="muted" />
     </>

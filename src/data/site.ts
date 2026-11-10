@@ -1,9 +1,28 @@
 export const siteConfig = {
   name: "Team Bergen?",
   url: "https://teambergen.no",
+  email: "teambergendg@gmail.com",
   description:
-    "Vi er en gjeng som vil litt mer med sporten vår - både på og utenfor banen.",
+    "Fem diskgolfere fra Bergen. Vi spiller turneringer, trener sammen og vil ha flere med ut på banene.",
   ogImage: "/og-image.jpg",
+};
+
+export const podcast = {
+  name: "Team Bergen? Podcast",
+  spotifyShowId: "1B3UjZ9W9QT6WpAO8WMlut",
+  spotifyUrl: "https://open.spotify.com/show/1B3UjZ9W9QT6WpAO8WMlut",
+  discordUrl: "https://discord.gg/jaTEbUNuJe",
+  /** Plattformer uten url vises som «Kommer snart». */
+  platforms: [
+    {
+      name: "Spotify",
+      url: "https://open.spotify.com/show/1B3UjZ9W9QT6WpAO8WMlut",
+    },
+    {
+      name: "Apple Podcasts",
+      url: "https://podcasts.apple.com/no/podcast/team-bergen-podcast/id6829929178",
+    },
+  ] as { name: string; url?: string }[],
 };
 
 export type ContactIcon =
@@ -11,7 +30,9 @@ export type ContactIcon =
   | "instagram"
   | "youtube"
   | "tiktok"
-  | "snapchat";
+  | "snapchat"
+  | "spotify"
+  | "discord";
 
 export interface ContactItem {
   icon: ContactIcon;
@@ -51,6 +72,18 @@ export const contactItems: ContactItem[] = [
     href: "https://www.snapchat.com/add/teambergen",
     external: true,
   },
+  {
+    icon: "spotify",
+    label: "Team Bergen? Podcast",
+    href: "https://open.spotify.com/show/1B3UjZ9W9QT6WpAO8WMlut",
+    external: true,
+  },
+  {
+    icon: "discord",
+    label: "Discord-serveren",
+    href: "https://discord.gg/jaTEbUNuJe",
+    external: true,
+  },
 ];
 
 export const socialLinks = {
@@ -58,6 +91,8 @@ export const socialLinks = {
   youtube: "https://www.youtube.com/@teambergendg",
   tiktok: "https://www.tiktok.com/@teambergendg",
   snapchat: "https://www.snapchat.com/add/teambergen",
+  spotify: "https://open.spotify.com/show/1B3UjZ9W9QT6WpAO8WMlut",
+  discord: "https://discord.gg/jaTEbUNuJe",
 };
 
 export const structuredData = {
@@ -66,7 +101,7 @@ export const structuredData = {
   name: "Team Bergen?",
   alternateName: "Team Bergen",
   description:
-    "Diskgolfteam fra Bergen og Vestlandet. Vi er en gjeng diskgolf-entusiaster som vil litt mer med sporten vår.",
+    "Diskgolfteam fra Bergen. Vi spiller turneringer, trener sammen og vil ha flere med ut på banene.",
   url: "https://teambergen.no",
   logo: "https://teambergen.no/favicon.svg",
   image: "https://teambergen.no/og-image.jpg",
@@ -95,6 +130,8 @@ export const structuredData = {
     "https://www.youtube.com/@teambergendg",
     "https://www.tiktok.com/@teambergendg",
     "https://www.snapchat.com/add/teambergen",
+    "https://open.spotify.com/show/1B3UjZ9W9QT6WpAO8WMlut",
+    "https://podcasts.apple.com/no/podcast/team-bergen-podcast/id6829929178",
   ],
   member: [
     {

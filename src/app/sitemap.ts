@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://teambergen.no", lastModified: new Date() },
     { url: "https://teambergen.no/team", lastModified: new Date() },
     { url: "https://teambergen.no/om-oss", lastModified: new Date() },
+    { url: "https://teambergen.no/podcast", lastModified: new Date() },
     { url: "https://teambergen.no/kontakt", lastModified: new Date() },
   ];
 }

@@ -1,20 +1,20 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { ScoreCard, type ScoreCardItem } from "@/components/score-card";
 
-const valueProps = [
+const valueProps: ScoreCardItem[] = [
   {
-    title: "Seriøs satsing",
+    title: "Turneringer",
     description:
-      "Vi trener målrettet og konkurrerer på regionalt og nasjonalt nivå. Målet er å bli bedre - både individuelt og som lag.",
+      "Vi spiller flest turneringer her på Vestlandet, men reiser også en del rundt i landet.",
   },
   {
-    title: "Sterkt fellesskap",
+    title: "Trening",
     description:
-      "Diskgolf er en individuell sport, men sammen blir vi bedre. Vi deler tips, heier hverandre frem og har det gøy på veien.",
+      "Vi trener sammen når vi får det til, og sier fra til hverandre når kastene ikke sitter.",
   },
   {
-    title: "Bergensstolthet",
+    title: "Bergen",
     description:
-      "Bergen og Vestlandet har fantastiske baner og et voksende miljø. Vi vil sette regionen på diskgolfkartet.",
+      "Det blir stadig flere som spiller diskgolf i Bergen. Vi vil gjerne ha med enda flere.",
   },
 ];
 
@@ -26,23 +26,12 @@ export function ValueProps() {
           Hvorfor Team Bergen?
         </h2>
         <p className="text-muted-foreground max-w-xl mb-12">
-          Vi er et fellesskap av diskgolfspillere som vil utvikle oss og sporten
-          i regionen. Spørsmålstegnet er ikke en tilfeldighet - det er en
-          invitasjon til kontakt. Vi er klar for en prat. Spør oss gjerne.
+          Det startet med vanlige runder på lokale baner, og etter hvert ble
+          det et lag. Spørsmålstegnet har vi lånt fra Bergen?-skiltet på
+          Flesland. Lurer du på noe, er det bare å spørre.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {valueProps.map((prop) => (
-            <Card key={prop.title}>
-              <CardContent>
-                <h3 className="font-bold mb-2">{prop.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {prop.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <ScoreCard items={valueProps} />
       </div>
     </section>
   );
