@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://teambergen.no/sitemap-index.xml

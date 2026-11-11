@@ -1,8 +1,9 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export interface ScoreCardItem {
-  title: string;
-  description: string;
+  title: ReactNode;
+  description: ReactNode;
 }
 
 interface ScoreCardProps {
@@ -21,7 +22,7 @@ export function ScoreCard({ items, par = 3, className }: ScoreCardProps) {
     >
       {items.map((item, i) => (
         <li
-          key={item.title}
+          key={i}
           className="flex flex-col border-border not-first:border-t-2 md:not-first:border-t-0 md:not-first:border-l-2"
         >
           <div className="flex items-end justify-between gap-4 border-b-2 border-border bg-secondary px-5 py-3 text-secondary-foreground">
@@ -38,12 +39,20 @@ export function ScoreCard({ items, par = 3, className }: ScoreCardProps) {
             </span>
           </div>
           <div className="flex-1 px-5 py-6 md:px-6 md:py-7">
-            <h3 className="text-xl font-bold tracking-tight mb-2">
-              {item.title}
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {item.description}
-            </p>
+            {typeof item.title === "string" ? (
+              <h3 className="text-xl font-bold tracking-tight mb-2">
+                {item.title}
+              </h3>
+            ) : (
+              item.title
+            )}
+            {typeof item.description === "string" ? (
+              <p className="text-muted-foreground leading-relaxed">
+                {item.description}
+              </p>
+            ) : (
+              item.description
+            )}
           </div>
         </li>
       ))}

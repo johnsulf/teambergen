@@ -8,6 +8,7 @@ const navItems = [
   { href: "/om-oss", label: "Om oss" },
   { href: "/team", label: "Teamet" },
   { href: "/podcast", label: "Podcast" },
+  { href: "/blogg", label: "Blogg" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 

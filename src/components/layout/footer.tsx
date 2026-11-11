@@ -35,6 +35,12 @@ export function Footer() {
               Podcast
             </Link>
             <Link
+              href="/blogg"
+              className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
+            >
+              Blogg
+            </Link>
+            <Link
               href="/kontakt"
               className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors"
             >
@@ -93,9 +99,17 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-secondary-foreground/10">
-          <p className="text-xs text-secondary-foreground/40">
-            &copy; {new Date().getFullYear()} Team Bergen?
-          </p>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs text-secondary-foreground/40">
+              &copy; {new Date().getFullYear()} Team Bergen?
+            </p>
+            <Link
+              href="/logg-inn"
+              className="text-xs text-secondary-foreground/30 hover:text-primary transition-colors"
+            >
+              For teamet
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

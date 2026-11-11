@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { EditableText } from "@/components/cms/editable-text";
 
 export function Hero() {
   return (
@@ -8,18 +9,25 @@ export function Hero() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-32">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           <div className="flex-1">
-            <p className="text-sm font-medium text-secondary-foreground/50 uppercase tracking-wider mb-3">
-              Diskgolfteam fra Bergen
-            </p>
+            <EditableText
+              id="home.hero.eyebrow"
+              label="Forsiden: liten tekst over logoen"
+              fallback="Diskgolfteam fra Bergen"
+              className="text-sm font-medium text-secondary-foreground/50 uppercase tracking-wider mb-3"
+            />
             <h1 className="text-5xl md:text-7xl tracking-wider leading-none font-brand">
               TEAM
               <span className="text-primary"> BERGEN?</span>
             </h1>
 
-            <p className="text-lg text-secondary-foreground/70 max-w-lg mt-6 leading-relaxed">
-              Fem diskgolfere fra Bergen. Vi spiller turneringer, trener
-              sammen og vil ha flere med ut på banene.
-            </p>
+            <div className="mt-6">
+              <EditableText
+                id="home.hero.lead"
+                label="Forsiden: ingress"
+                fallback="Fem diskgolfere fra Bergen. Vi spiller turneringer, trener sammen og vil ha flere med ut på banene."
+                className="text-lg text-secondary-foreground/70 max-w-lg leading-relaxed"
+              />
+            </div>
 
             <div className="flex gap-3 flex-wrap mt-8">
               <Button render={<Link href="/team" />}>Møt teamet</Button>

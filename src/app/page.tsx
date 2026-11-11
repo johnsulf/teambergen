@@ -5,6 +5,7 @@ import { TeamTeaser } from "@/components/team-teaser";
 import { PodcastSection } from "@/components/podcast-section";
 import { SponsorTeaser } from "@/components/sponsor-teaser";
 import { SponsorLogos } from "@/components/sponsor-logos";
+import { LatestPosts } from "@/components/blog/latest-posts";
 
 export const metadata: Metadata = {
   title: "Team Bergen? – Diskgolfteam fra Bergen og Vestlandet",
@@ -19,6 +20,7 @@ export default function Home() {
       <ValueProps />
       <TeamTeaser />
       <PodcastSection />
+      <LatestPosts />
       <SponsorTeaser />
       <SponsorLogos variant="muted" />
     </>

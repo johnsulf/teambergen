@@ -1,13 +1,22 @@
 import type { MetadataRoute } from "next";
+import { getPublishedPosts } from "@/lib/cms/data";
 
-export const dynamic = "force-static";
+const base = "https://teambergen.no";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts();
+  const latest = posts[0]?.published_at ? new Date(posts[0].published_at) : undefined;
+
   return [
-    { url: "https://teambergen.no", lastModified: new Date() },
-    { url: "https://teambergen.no/team", lastModified: new Date() },
-    { url: "https://teambergen.no/om-oss", lastModified: new Date() },
-    { url: "https://teambergen.no/podcast", lastModified: new Date() },
-    { url: "https://teambergen.no/kontakt", lastModified: new Date() },
+    { url: base },
+    { url: `${base}/team` },
+    { url: `${base}/om-oss` },
+    { url: `${base}/podcast` },
+    { url: `${base}/blogg`, lastModified: latest },
+    { url: `${base}/kontakt` },
+    ...posts.map((post) => ({
+      url: `${base}/blogg/${post.slug}`,
+      lastModified: post.published_at ? new Date(post.published_at) : undefined,
+    })),
   ];
 }

@@ -1,8 +1,12 @@
 import type { ReactNode } from "react";
 
+export const pageHeaderLeadClass =
+  "mt-4 text-lg text-secondary-foreground/70 max-w-2xl";
+
 interface PageHeaderProps {
   title: string;
-  lead?: string;
+  /** Tekst, eller et ferdig element (f.eks. <EditableText className={pageHeaderLeadClass} />). */
+  lead?: ReactNode;
   children?: ReactNode;
 }
 
@@ -13,10 +17,10 @@ export function PageHeader({ title, lead, children }: PageHeaderProps) {
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           {title}
         </h1>
-        {lead && (
-          <p className="mt-4 text-lg text-secondary-foreground/70 max-w-2xl">
-            {lead}
-          </p>
+        {typeof lead === "string" ? (
+          <p className={pageHeaderLeadClass}>{lead}</p>
+        ) : (
+          lead
         )}
         {children}
       </div>

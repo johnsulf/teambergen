@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { contactItems, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
+import { getContactLinks } from "@/lib/cms/data";
+import { EditorOnly } from "@/components/cms/editor-provider";
+import { EditButton } from "@/components/cms/edit-button";
 import { PageHeader } from "@/components/page-header";
 import { Section } from "@/components/section";
 import { ContactCard } from "@/components/contact-card";
@@ -55,7 +58,8 @@ const sponsorColumns: ScoreTableColumn[] = [
   },
 ];
 
-export default function KontaktPage() {
+export default async function KontaktPage() {
+  const contactItems = await getContactLinks();
   const mailto = `mailto:${siteConfig.email}`;
 
   return (
@@ -82,7 +86,12 @@ export default function KontaktPage() {
               {siteConfig.email}
             </a>
           </div>
-          <div className="w-full lg:w-auto lg:min-w-80">
+          <div className="relative w-full lg:w-auto lg:min-w-80">
+            <EditorOnly>
+              <EditButton href="/admin/kontakt" className="absolute -top-3 right-3 z-10">
+                Rediger lenker
+              </EditButton>
+            </EditorOnly>
             <ContactCard title="Finn oss her" items={contactItems} />
           </div>
         </div>

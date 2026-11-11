@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { structuredData } from "@/data/site";
+import { EditorProvider } from "@/components/cms/editor-provider";
+import { AdminBar } from "@/components/cms/admin-bar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,9 +81,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="grow">{children}</main>
-        <Footer />
+        <EditorProvider>
+          <Header />
+          <main className="grow flex flex-col">{children}</main>
+          <Footer />
+          <AdminBar />
+        </EditorProvider>
       </body>
     </html>
   );

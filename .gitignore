@@ -26,3 +26,6 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# eksempel på miljøvariabler skal sjekkes inn
+!.env.example

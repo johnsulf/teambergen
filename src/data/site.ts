@@ -25,16 +25,34 @@ export const podcast = {
   ] as { name: string; url?: string }[],
 };
 
-export type ContactIcon =
-  | "email"
-  | "instagram"
-  | "youtube"
-  | "tiktok"
-  | "snapchat"
-  | "spotify"
-  | "discord";
+export const CONTACT_ICONS = [
+  "email",
+  "instagram",
+  "facebook",
+  "youtube",
+  "tiktok",
+  "snapchat",
+  "spotify",
+  "discord",
+  "link",
+] as const;
+
+export type ContactIcon = (typeof CONTACT_ICONS)[number];
+
+export const contactIconLabels: Record<ContactIcon, string> = {
+  email: "E-post",
+  instagram: "Instagram",
+  facebook: "Facebook",
+  youtube: "YouTube",
+  tiktok: "TikTok",
+  snapchat: "Snapchat",
+  spotify: "Spotify",
+  discord: "Discord",
+  link: "Annen lenke",
+};
 
 export interface ContactItem {
+  id?: string;
   icon: ContactIcon;
   label: string;
   href: string;

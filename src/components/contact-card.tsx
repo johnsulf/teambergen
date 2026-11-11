@@ -15,6 +15,14 @@ const iconPaths: Record<ContactIcon, React.ReactNode> = {
       <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
     </>
   ),
+  facebook: (
+    <path
+      fill="currentColor"
+      stroke="none"
+      transform="translate(2 2) scale(0.8333)"
+      d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+    />
+  ),
   youtube: (
     <path
       strokeLinecap="round"
@@ -42,6 +50,13 @@ const iconPaths: Record<ContactIcon, React.ReactNode> = {
       stroke="none"
       transform="translate(2 2) scale(0.8333)"
       d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+    />
+  ),
+  link: (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
     />
   ),
   discord: (
@@ -80,7 +95,7 @@ export function ContactCard({ title = "Kontakt", items }: ContactCardProps) {
       <h3 className="font-bold text-lg mb-4">{title}</h3>
       <ul className="space-y-2">
         {items.map((item) => (
-          <li key={item.href}>
+          <li key={item.id ?? item.href}>
             <a
               href={item.href}
               className="flex items-center gap-3 p-3 border border-border hover:bg-muted transition-colors"

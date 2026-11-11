@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -210,6 +211,52 @@ html {
   max-width: 65ch;
 }
 
-.prose-compact p {
-  margin-bottom: 1rem;
+/* Blogginnlegg: typografi tilpasset den grafiske profilen */
+.prose-tb {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--primary);
+  --tw-prose-bullets: var(--foreground);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-hr: var(--border);
+  --tw-prose-code: var(--foreground);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-tb :where(h2, h3, h4) {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.prose-tb :where(a) {
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.prose-tb :where(a):hover {
+  text-decoration-color: currentColor;
+}
+
+.prose-tb :where(blockquote) {
+  border-left-width: 4px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.prose-tb :where(img) {
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.prose-tb :where(hr) {
+  border-top-width: 2px;
+}
+
+.prose-tb :where(ul > li)::marker {
+  color: var(--foreground);
 }

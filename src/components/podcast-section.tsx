@@ -2,6 +2,7 @@ import Link from "next/link";
 import { podcast } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { SpotifyEmbed } from "@/components/spotify-embed";
+import { EditableText } from "@/components/cms/editable-text";
 
 export function PodcastSection() {
   return (
@@ -18,16 +19,13 @@ export function PodcastSection() {
             <h2 className="text-3xl font-bold tracking-tight mb-4">
               {podcast.name}
             </h2>
-            <div className="space-y-4 text-muted-foreground max-w-md leading-relaxed">
-              <p>
-                Vi har startet en podcast der vi prater diskgolf. Nye episoder
-                kommer på Spotify.
-              </p>
-              <p>
-                Vi spiller inn på Discord, og alle kan bli med i serveren og
-                høre på mens vi tar opp.
-              </p>
-            </div>
+            <EditableText
+              id="home.podcast.text"
+              label="Forsiden: om podcasten"
+              markdown
+              fallback={"Vi har startet en podcast der vi prater diskgolf. Nye episoder kommer på Spotify.\n\nVi spiller inn på Discord, og alle kan bli med i serveren og høre på mens vi tar opp."}
+              className="text-muted-foreground max-w-md leading-relaxed"
+            />
 
             <div className="flex gap-3 flex-wrap mt-8">
               <Button
